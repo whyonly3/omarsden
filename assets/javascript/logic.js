@@ -1,5 +1,11 @@
 function twitch() {
-    var twitchUrl= ""
+    var twitchUrl= "https://api.twitch.tv/kraken/streams/?game=overwatch"
+    var query = $(this).attr('data-person')
+    $.ajax({
+        url: twitchUrl,
+        method: "GET",
+        headers: {"Client-ID": "ncvflt70y19rx0ayfvplqquyzqpilx"}
+    })
 }
 function giphy() {
     var giphyUrl= "https://giphy.p.mashape.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=10&q=funny+cat"
@@ -30,3 +36,5 @@ function igdb() {
         })
 }
 igdb()
+giphy()
+twitch()

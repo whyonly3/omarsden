@@ -3,17 +3,60 @@
 <head>
     <meta charset="utf-8">
     <title>Omars' Den</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script type="text/javascript" src="assets/javascript/logic.js"></script>
+
 </head>
+
+
 <body>
 
 
+<nav class="navbar navbar-light bg-faded justify-content-between">
+  <a class="navbar-brand">Omar's Den</a>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  	<div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">@</span>
+      <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+    </div>
+  </form>
+</nav>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">Game Title</h1>
+    <p class="lead">Release Date</p>
+  </div>
+</div>
+
+<div class="container" id="igdb-response">
+	<h1>Game Info</h1>
+	<ul>
+		<li>About</li>
+		<li>Gameplay Image</li>
+		<li>Official Website Link</li>
+		<li>FB Link</li>
+	</ul>
+</div>
+
+<div class="container" id="twitch-stream">
+	<h1>Twitch Stream</h1>
+</div>
 
 
 
 
 
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="assets/javascript/logic.js"></script>
+
 </body>
 </html>

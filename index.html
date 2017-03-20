@@ -14,6 +14,8 @@
 
 	<script type="text/javascript" src="assets/javascript/logic.js"></script>
 
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
 </head>
 
 
@@ -23,12 +25,8 @@
 <nav class="navbar navbar-light bg-faded justify-content-between">
   <a class="navbar-brand">Omar's Den</a>
   <form class="form-inline">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  	<div class="input-group">
-      <span class="input-group-addon" id="basic-addon1">@</span>
-      <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-    </div>
+    <input id="query-input" class="form-control mr-sm" type="text" placeholder="Search">
+    <button id="search" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
 </nav>
 

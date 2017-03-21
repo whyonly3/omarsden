@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../01-2017-VW-Class-Content/.idea/01-2017-VW-Class-Content.iml" filepath="$PROJECT_DIR$/../01-2017-VW-Class-Content/.idea/01-2017-VW-Class-Content.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../homework/giphyapi/.idea/giphyapi.iml" filepath="$PROJECT_DIR$/../homework/giphyapi/.idea/giphyapi.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/omarsden.iml" filepath="$PROJECT_DIR$/.idea/omarsden.iml" />
     </modules>
   </component>

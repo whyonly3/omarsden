@@ -12,7 +12,9 @@ $(document).ready(function () {
 
     firebase.initializeApp(config);
     var database = firebase.database()
-    $('')
+    $('#search').on('click', function () {
+
+    })
 function giphyDisplay() {
     $.ajax({
         url: giphyUrl,

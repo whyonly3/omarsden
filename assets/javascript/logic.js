@@ -11,27 +11,13 @@ $(document).ready(function () {
     var database = firebase.database()
     $('#search').on('click', function (e) {
         var query = $('#query-input').val().trim()
-        var igdbUrl = "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name,url,summary,cover&search=" + query
-        var igdbAjax = $.ajax({
-            url: igdbUrl,
-            method: "GET",
-            headers: {
-                "X-Mashape-Key": "rVAKBl1pWxmshN2KI8WzLgDtQvXSp1CLTDhjsnjZT2bL5VZLaQ",
-                "Accept": "application/json"
-            },
-        })
         alert("this is working!")
         database.ref('main-request').set({
             request : query
         })
-            .done( function (response) {
-                console.log(response)
-            })
-
     })
 
     database.ref('main-request').on('child_added', function (a, b) {
-        console.log('child_added', a.val());
     var search = a.val()
         console.log(search)
     var twitchUrl = "https://api.twitch.tv/kraken/streams/?game=" + search + "&limit=1"
@@ -59,10 +45,17 @@ $(document).ready(function () {
             },
         })
     $.when(twitchAjax,giphyAjax,igdbAjax).done(function (r1,r2,r3) {
-        console.log(r1[0])
-        console.log(r2[0])
-        console.log(r3[0])
+        var twitchResponse = r1[0],
+            giphyResponse = r2[0],
+            igdbResponse = r3[0]
+        console.log(twitchResponse)
+        console.log()
     })
+
+
 })
+
+
+
 
 })

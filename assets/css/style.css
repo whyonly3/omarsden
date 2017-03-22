@@ -6,24 +6,28 @@
 
 .jumbotron {
     background-image: url("den.jpg");
-    background-color: #17234E;
+    background-color: black;
     margin-bottom: 0;
     min-height: 50%;
     background-repeat: no-repeat;
     background-position: center;
     -webkit-background-size: cover;
     background-size: cover;
+    margin-left: 5%;
+    margin-right: 5%;
+
 }
 
 .jumbotron h1{
 	color: white;
 }
-.about, .release, .rating {
+.about, .rating {
 	color: white;
 }
 
 .game-image {
 	float: right;
+	height: 150px;
 }
 
 .stream {

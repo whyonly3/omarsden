@@ -31,8 +31,9 @@
 }
 
 .stream {
-	height: 80%;
-	width: 70%;
+	width: 760px;
+	height: 600px;
+	margin-left: 150px;
 }
 
 .image {

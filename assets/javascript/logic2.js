@@ -78,8 +78,15 @@ function igdbDisplay (igdbUrl) {
         }
     })
         .done(function (response) {
-            var results = response[0]
-            console.log(results)
+            var gameName = response[0].name;
+            console.log(gameName);
+            $(".game-title").html(gameName);
+            var gameSummary = response[0].summary;
+            $(".about").html(gameSummary);
+            var gameRating = response[0].rating;
+            $(".rating").append("" + gameRating + "<br>");
+            var gameImage = response[0].cover.url;
+            $(".game-image").attr("src", "https://"+gameImage);
         })
 }
 })

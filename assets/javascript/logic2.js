@@ -14,7 +14,7 @@ $(document).ready(function () {
         searchInput = searchInput.replace(/ /g, "+")
         var giphyUrl = "https://giphy.p.mashape.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=6&q=" + searchInput
         var twitchUrl = "https://api.twitch.tv/kraken/streams/?game=" + searchInput +"&limit=1"
-        var igdbUrl = "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name,url,cover,summary,rating&search=" + searchInput
+        var igdbUrl = "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name,url,cover,summary,rating,screenshots&search=" + searchInput
         giphyDisplay(giphyUrl);
         twitchDisplay(twitchUrl);
         igdbDisplay(igdbUrl);
@@ -82,6 +82,15 @@ function igdbDisplay (igdbUrl) {
         .done(function (response) {
             var results = response[0]
             console.log(results)
+            var gameName = response[0].name;
+            console.log(gameName);
+            $(".game-title").html(gameName);
+            var gameSummary = response[0].summary;
+            $(".about").html(gameSummary);
+            var gameRating = response[0].rating;
+            $(".rating").append("" + gameRating + "<br>");
+            var gameImage = response[0].cover.url;
+            $(".game-image").attr("src", "https://"+gameImage);
 
         })
 }

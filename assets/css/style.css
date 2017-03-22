@@ -26,26 +26,14 @@
 }
 
 .stream {
-	height: 720px;
-	width: 1280px;
+	height: 80%;
+	width: 70%;
 }
 
 .image {
 	float: left;
 	height: 200px;
 }
-
-
-.streamDiv {
-	margin: auto;
-	width: 50%;
-    border: 3px #337ab7;
-    padding: 10px;
-}
-
 .col-sm-4 {
-	height: 350px;
-	border-style: solid;
-	border-radius: 10px;
-
+	height: auto;
 }

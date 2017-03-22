@@ -15,9 +15,10 @@ $(document).ready(function () {
         var giphyUrl = "https://giphy.p.mashape.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=6&q=" + searchInput
         var twitchUrl = "https://api.twitch.tv/kraken/streams/?game=" + searchInput +"&limit=1"
         var igdbUrl = "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name,url,cover,summary,rating&search=" + searchInput
-        giphyDisplay(giphyUrl);
-        twitchDisplay(twitchUrl);
-        igdbDisplay(igdbUrl);
+        giphyDisplay(giphyUrl)
+        twitchDisplay(twitchUrl)
+        igdbDisplay(igdbUrl)
+        $('#query-input').val('')
         return false;
     })
 function giphyDisplay(giphyUrl) {
@@ -30,7 +31,7 @@ function giphyDisplay(giphyUrl) {
         }
     })
         .done(function (response) {
-            $('#queryImgDisplay').empty()
+            $('.row').empty()
             var results = response.data
             if (results == " ") {
                 console.log('there are no gifs')
@@ -38,13 +39,13 @@ function giphyDisplay(giphyUrl) {
             console.log(results)
             for (var i = 0; i < results.length; i++) {
                 var gifDiv = $("<div>")
-                gifDiv.addClass("gifDiv")
+                gifDiv.addClass("col-sm-4")
                 var gifImage = $('<img>')
                 gifImage.attr("src",results[i].images.original.url)
                 gifImage.addClass('image')
                 gifDiv.append(gifImage)
                 $('.game-image').val(results)
-                $('#queryImgDisplay').prepend(gifDiv)
+                $('.row').prepend(gifDiv)
             }
         })
 }
@@ -56,18 +57,15 @@ function twitchDisplay(twitchUrl) {
     })
         .done(function (response) {
             $('#twitch-stream').empty()
-            var results = response[0]
+            var results = response.streams[0]
             if (results == "") {
                 console.log("there are no streams")
             }
             console.log(results)
-            var streamDiv = $("<div>")
-            streamDiv.addClass('streamDiv')
-            var gifStream = $("<iframe>")
-            gifStream.attr("src", "https://player.twitch.tv/?channel=" + results.channel.name)
-            streamDiv.append(gifStream)
-            $('#twitch-stream').prepend(streamDiv)
-                //src="https://player.twitch.tv/?channel=valkia" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/valkia?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">Watch live video from Valkia on www.twitch.tv</a>
+            var stream = $("<iframe>")
+            stream.attr("src", "https://player.twitch.tv/?channel=" + results.channel.name)
+            stream.addClass('stream')
+            $('#twitch-stream').prepend(stream)
         })
 }
 function igdbDisplay (igdbUrl) {
@@ -82,7 +80,6 @@ function igdbDisplay (igdbUrl) {
         .done(function (response) {
             var results = response[0]
             console.log(results)
-
         })
 }
 })

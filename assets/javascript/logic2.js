@@ -31,7 +31,7 @@ function giphyDisplay(giphyUrl) {
         }
     })
         .done(function (response) {
-            $('.row').empty()
+            $('#queryImgDisplay').empty()
             var results = response.data
             if (results == " ") {
                 console.log('there are no gifs')
@@ -39,13 +39,11 @@ function giphyDisplay(giphyUrl) {
             console.log(results)
             for (var i = 0; i < results.length; i++) {
                 var gifDiv = $("<div>")
-                gifDiv.addClass("col-sm-4")
                 var gifImage = $('<img>')
                 gifImage.attr("src",results[i].images.original.url)
                 gifImage.addClass('image')
                 gifDiv.append(gifImage)
-                $('.game-image').val(results)
-                $('.row').prepend(gifDiv)
+                $('#queryImgDisplay').prepend(gifDiv)
             }
         })
 }
@@ -78,7 +76,7 @@ function igdbDisplay (igdbUrl) {
         }
     })
         .done(function (response) {
-            $(".rating").empty();
+
             var gameName = response[0].name;
             console.log(gameName);
             $(".game-title").html(gameName);

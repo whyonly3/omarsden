@@ -85,7 +85,7 @@ function igdbDisplay (igdbUrl) {
             var gameRating = response[0].rating;
             $(".rating").append("" + gameRating + "<br>");
             var gameImage = response[0].cover.url;
-            $(".game-image").attr("src", "https://"+gameImage);
+            $(".game-image").attr("src", "https://"+gameImage + "<br>");
         })
 }
 })

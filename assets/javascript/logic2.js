@@ -56,13 +56,13 @@ function twitchDisplay(twitchUrl) {
         .done(function (response) {
             $('#twitch-stream').empty()
             var results = response.streams[0]
-            if (results == "") {
+            if (results === "") {
                 console.log("there are no streams")
             }
             console.log(results)
             var stream = $("<iframe>")
-            stream.attr("src", "https://player.twitch.tv/?channel=" + results.channel.name)
-            stream.addClass('stream')
+            stream.attr("src", "https://player.twitch.tv/?channel=" + results.channel.name);
+            stream.addClass('stream');
             $('#twitch-stream').prepend(stream)
         })
 }
@@ -83,9 +83,10 @@ function igdbDisplay (igdbUrl) {
             var gameSummary = response[0].summary;
             $(".about").html(gameSummary);
             var gameRating = response[0].rating;
-            $(".rating").append("" + gameRating + "<br>");
+            gameRating = gameRating.toFixed(2);
+            $(".rating").html("Rating: " + gameRating + "<br>");
             var gameImage = response[0].cover.url;
-            $(".game-image").attr("src", "https://"+gameImage + "<br>");
+            $(".game-image").attr("src", "https://" + gameImage);
         })
 }
 })
